@@ -17,10 +17,11 @@ async function loadContent() {
     projects.innerHTML = '';
     data.projects.forEach(p => {
       projects.innerHTML += `
-        <div class="card">
+        <a class="card" href="project.html?id=${p.id}">
           <h3>${p.title}</h3>
           <p>${p.desc}</p>
-        </div>`;
+          <small>${p.stack}</small>
+        </a>`;
     });
   }
 }

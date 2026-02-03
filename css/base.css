@@ -55,6 +55,14 @@ nav a.active::after {
 
 nav a:hover { opacity: 1; }
 
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -131,4 +139,13 @@ nav a:hover { opacity: 1; }
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+.card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card small {
+  opacity: .6;
 }
