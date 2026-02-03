@@ -1,16 +1,11 @@
-const themeBtn = document.getElementById('theme-toggle');
-const themeLink = document.getElementById('theme-style');
-
-const savedTheme = localStorage.getItem('theme') || 'dark';
-setTheme(savedTheme);
-
-themeBtn.onclick = () => {
-  const newTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-  setTheme(newTheme);
-};
-
-function setTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  themeLink.href = `css/${theme}.css`;
-  localStorage.setItem('theme', theme);
+function toggleTheme() {
+  const link = document.getElementById('theme-style');
+  const dark = link.getAttribute('href').includes('dark');
+  link.href = dark ? 'css/light.css' : 'css/dark.css';
+  localStorage.setItem('theme', dark ? 'light' : 'dark');
 }
+
+(() => {
+  const theme = localStorage.getItem('theme') || 'dark';
+  document.getElementById('theme-style').href = `css/${theme}.css`;
+})();

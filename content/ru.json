@@ -1,0 +1,10 @@
+{
+  "hero_title": "Автоматизация & IT Engineer",
+  "hero_subtitle": "PLC, backend, frontend, industrial systems",
+  "projects_title": "Проекты",
+  "projects": [
+    { "title": "PLC Monitoring", "desc": "Система мониторинга оборудования" },
+    { "title": "Telegram Bot", "desc": "Бот для производственных смен" }
+  ]
+}
+
