@@ -5,5 +5,8 @@
   "projects": [
     { "title": "PLC Monitoring", "desc": "Система мониторинга оборудования" },
     { "title": "Telegram Bot", "desc": "Бот для производственных смен" }
-  ]
+  ],
+"about_title": "About me",
+"about_intro": "Automation engineer with hands-on experience in PLC, IT and industrial systems.",
+"about_skills_title": "Key skills"
 }

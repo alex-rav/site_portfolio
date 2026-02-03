@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | RAV</title>
+  <title>About</title>
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/dark.css" id="theme-style" />
 </head>
 <body>
-  <header id="site-header"></header>
+  <div id="header"></div>
 
   <main class="container">
-    <h1 data-i18n="about.title"></h1>
-    <p data-i18n="about.text"></p>
+    <h1 data-key="about_title"></h1>
+
+    <p data-key="about_intro"></p>
+
+    <h2 data-key="about_skills_title"></h2>
+    <ul>
+      <li>PLC (Siemens, TIA Portal)</li>
+      <li>Industrial Networks</li>
+      <li>Backend (Node.js, Python)</li>
+      <li>Frontend (HTML, CSS, JS)</li>
+      <li>Linux, Docker, Nginx</li>
+    </ul>
   </main>
 
-  <footer id="site-footer"></footer>
+  <div id="footer"></div>
 
   <script src="js/layout.js"></script>
   <script src="js/theme.js"></script>
-  <script src="js/i18n.js"></script>
 </body>
 </html>
+

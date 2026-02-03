@@ -34,4 +34,16 @@ window.setLang = lang => {
   await loadPartial('header', 'header.html');
   await loadPartial('footer', 'footer.html');
   await loadContent();
+  setActiveNav();
 })();
+
+  function setActiveNav() {
+  const current = location.pathname.split('/').pop() || 'index.html';
+
+  document.querySelectorAll('nav a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === current) {
+      link.classList.add('active');
+    }
+  });
+}
