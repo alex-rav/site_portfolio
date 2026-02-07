@@ -26,16 +26,12 @@ async function loadContent() {
   }
 }
 
-window.setLang = lang => {
-  localStorage.setItem('lang', lang);
-  location.reload();
-};
-
 (async () => {
   await loadPartial('header', 'header.html');
   await loadPartial('footer', 'footer.html');
   await loadContent();
   setActiveNav();
+  updateLangLabel();
 })();
 
   function setActiveNav() {
@@ -47,4 +43,17 @@ window.setLang = lang => {
       link.classList.add('active');
     }
   });
+}
+
+window.toggleLang = () => {
+  const current = localStorage.getItem('lang') || 'ru';
+  const next = current === 'ru' ? 'en' : 'ru';
+  localStorage.setItem('lang', next);
+  location.reload();
+};
+
+function updateLangLabel() {
+  const lang = localStorage.getItem('lang') || 'ru';
+  const label = document.getElementById('lang-label');
+  if (label) label.textContent = lang.toUpperCase();
 }
