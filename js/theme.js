@@ -1,11 +1,24 @@
-function toggleTheme() {
-  const link = document.getElementById('theme-style');
-  const dark = link.getAttribute('href').includes('dark');
-  link.href = dark ? 'css/light.css' : 'css/dark.css';
-  localStorage.setItem('theme', dark ? 'light' : 'dark');
+const THEME_KEY = 'theme';
+const THEME_LINK_ID = 'theme-style';
+
+function applyTheme(theme) {
+  const link = document.getElementById(THEME_LINK_ID);
+  if (!link) return;
+
+  // cache-busting, иначе Firefox делает вид что ничего не менялось
+  link.href = `css/${theme}.css?v=${Date.now()}`;
 }
 
-(() => {
-  const theme = localStorage.getItem('theme') || 'dark';
-  document.getElementById('theme-style').href = `css/${theme}.css`;
+function toggleTheme() {
+  const current = localStorage.getItem(THEME_KEY) || 'dark';
+  const next = current === 'dark' ? 'light' : 'dark';
+
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+}
+
+// инициализация при загрузке страницы
+(function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY) || 'dark';
+  applyTheme(saved);
 })();

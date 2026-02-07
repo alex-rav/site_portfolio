@@ -1,8 +1,9 @@
 :root {
   --bg: #ffffff;
   --text: #111111;
-  --accent: #0066ff;
-  --card: #f3f5f8;
-  --icon: #111827;
+  --card: #f3f4f6;
+
+  --border: #e5e7eb;
   --text-muted: #6b7280;
+  --icon: #111111;
 }
